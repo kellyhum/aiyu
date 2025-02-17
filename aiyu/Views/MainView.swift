@@ -17,10 +17,7 @@ struct MainView: View {
             Text("Your Decks")
                 .font(.title)
                 .bold()
-                .padding(.top, 20)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            
-            
             
             // add theme/test theme bar
             HStack {
@@ -35,7 +32,11 @@ struct MainView: View {
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1), radius: 5)
 
-                Button("Test Theme", action: {})
+                Button(action: {}) {
+                    Image(systemName: "pencil.and.outline")
+                    
+                    Text("Test Theme")
+                }
                     .padding(.horizontal, 15)
                     .padding(.vertical, 10)
                     .background(.white)
@@ -67,7 +68,7 @@ struct MainView: View {
                     
                     VStack {
                         NavigationLink(
-                            destination: EditView()) {
+                            destination: ReviewView()) {
                                 Text("Review")
                                     .frame(width: 310)
                                     .padding(.horizontal, 25)
@@ -87,14 +88,6 @@ struct MainView: View {
                                     .foregroundStyle(.black)
                                     .cornerRadius(25)
                                     .shadow(color: Color.black.opacity(0.1), radius: 5)
-//                                    .toolbar {
-//                                        ToolbarItem(placement: .topBarLeading) {
-//                                            Button(action: @Environment(\.dismiss)
-//                                            ) {
-//                                                
-//                                            }
-//                                        }
-//                                    }
                         }
                     }
                     
