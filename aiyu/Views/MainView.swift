@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MainView: View {
     // TODO: switch buttons to a custom reusable style instead of just copy/pasting the same style
@@ -79,7 +80,7 @@ struct MainView: View {
                         }
                         
                         NavigationLink(
-                            destination: EditView()) {
+                            destination: EditView(context: PersistenceController.shared.container.viewContext)) {
                                 Text("Edit Deck")
                                     .frame(width: 310)
                                     .padding(.horizontal, 25)
